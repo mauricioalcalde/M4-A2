@@ -1,0 +1,54 @@
+
+> notification-factories@1.0.0 test
+> npm run build && node --test dist/tests/positive/*.test.js
+
+
+> notification-factories@1.0.0 build
+> tsc -p tsconfig.json
+
+TAP version 13
+# Subtest: Abstract Factory: WebPlatformFactory crea WebNotifier
+ok 1 - Abstract Factory: WebPlatformFactory crea WebNotifier
+  ---
+  duration_ms: 1.38621
+  type: 'test'
+  ...
+# Subtest: Abstract Factory: MobilePlatformFactory crea MobileNotifier
+ok 2 - Abstract Factory: MobilePlatformFactory crea MobileNotifier
+  ---
+  duration_ms: 0.234243
+  type: 'test'
+  ...
+# Subtest: Abstract Factory: DesktopPlatformFactory crea DesktopNotifier
+ok 3 - Abstract Factory: DesktopPlatformFactory crea DesktopNotifier
+  ---
+  duration_ms: 0.187664
+  type: 'test'
+  ...
+# Subtest: Extra credit: Notifier usa MessageFactory inyectada para crear/enviar y luego mostrar
+ok 4 - Extra credit: Notifier usa MessageFactory inyectada para crear/enviar y luego mostrar
+  ---
+  duration_ms: 0.520792
+  type: 'test'
+  ...
+# Subtest: Factory Method: EmailMessageFactory crea EmailMessage y send() imprime formato esperado
+ok 5 - Factory Method: EmailMessageFactory crea EmailMessage y send() imprime formato esperado
+  ---
+  duration_ms: 0.939513
+  type: 'test'
+  ...
+# Subtest: Factory Method: SMSMessageFactory crea SMSMessage y send() imprime formato esperado
+ok 6 - Factory Method: SMSMessageFactory crea SMSMessage y send() imprime formato esperado
+  ---
+  duration_ms: 0.247288
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 347.464623

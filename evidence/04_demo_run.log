@@ -1,0 +1,20 @@
+
+> notification-factories@1.0.0 start
+> npm run build && node dist/main.js
+
+
+> notification-factories@1.0.0 build
+> tsc -p tsconfig.json
+
+=== Parte 1: Factory Method (creación de mensajes) ===
+[Email] Enviando Email a user@mail.com | subject="Aviso Importante" | content="Tu factura está disponible."
+[SMS] Enviando SMS a +5493411234567 | senderId="ACME-SMS" | content="OTP code: 123456"
+
+=== Parte 2: Abstract Factory (familia por plataforma) ===
+[Mobile UI] Mostrando en móvil: to=user@mail.com | "Tu factura está disponible."
+
+=== Extra credit: combinar Abstract Factory + Factory Method ===
+[SMS] Enviando SMS a +5493419999999 | senderId="ACME-SMS" | content="Promo: 20% OFF solo hoy."
+[Mobile UI] Mostrando en móvil: to=+5493419999999 | "Promo: 20% OFF solo hoy."
+
+=== Fin demo ===

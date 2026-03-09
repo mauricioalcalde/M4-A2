@@ -1,0 +1,126 @@
+
+> notification-factories@1.0.0 test:negative
+> npm run build && node scripts/expect-fail.js "node --test dist/tests/negative/*.test.js"
+
+
+> notification-factories@1.0.0 build
+> tsc -p tsconfig.json
+
+TAP version 13
+# Subtest: Negative suite: BrokenEmailFactory no es EmailMessage
+not ok 1 - Negative suite: BrokenEmailFactory no es EmailMessage
+  ---
+  duration_ms: 11.984348
+  type: 'test'
+  location: '/mnt/data/review_work/dist/tests/negative/anti-behavior.test.js:20:25'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      node_assert_1.strict.ok(msg instanceof EmailMessage_1.EmailMessage)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (/mnt/data/review_work/dist/tests/negative/anti-behavior.test.js:23:26)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: Negative suite: SMS send() no coincide con formato de Email
+not ok 2 - Negative suite: SMS send() no coincide con formato de Email
+  ---
+  duration_ms: 1.690759
+  type: 'test'
+  location: '/mnt/data/review_work/dist/tests/negative/anti-behavior.test.js:25:25'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      node_assert_1.strict.ok(lines[0].includes("[Email] Enviando Email"))
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (/mnt/data/review_work/dist/tests/negative/anti-behavior.test.js:28:26)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: Negative suite: MobilePlatformFactory no crea WebNotifier
+not ok 3 - Negative suite: MobilePlatformFactory no crea WebNotifier
+  ---
+  duration_ms: 0.819859
+  type: 'test'
+  location: '/mnt/data/review_work/dist/tests/negative/anti-behavior.test.js:30:25'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'MobileNotifier'
+    - 'WebNotifier'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'WebNotifier'
+  actual: 'MobileNotifier'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/mnt/data/review_work/dist/tests/negative/anti-behavior.test.js:33:26)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: Negative suite: WebPlatformFactory no crea MobileNotifier
+not ok 4 - Negative suite: WebPlatformFactory no crea MobileNotifier
+  ---
+  duration_ms: 0.37179
+  type: 'test'
+  location: '/mnt/data/review_work/dist/tests/negative/anti-behavior.test.js:35:25'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'WebNotifier'
+    - 'MobileNotifier'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'MobileNotifier'
+  actual: 'WebNotifier'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/mnt/data/review_work/dist/tests/negative/anti-behavior.test.js:38:26)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 0
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 165.142149
+
+[expect-fail] OK: fallo observado (exit code != 0).
